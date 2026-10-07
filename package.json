@@ -1,0 +1,23 @@
+{
+  "name": "tarea81026",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000T\u0000a\u0000r\u0000e\u0000a\u00000\u00008\u00001\u00000\u00002\u00006\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch src --ext ts --exec tsx src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rodrigo06017/Tarea081026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Rodrigo06017/Tarea081026/issues"
+  },
+  "homepage": "https://github.com/Rodrigo06017/Tarea081026#readme"
+}
