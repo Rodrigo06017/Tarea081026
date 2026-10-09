@@ -41,6 +41,27 @@ export const createProduct = async (req: Request, res: Response): Promise<void> 
   }
 };
 
+export const updateProduct = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id } = req.params;
+    const { name, price, stock, description, brand, img } = req.body;
+
+    const [result]: any = await pool.query(
+      'UPDATE products SET name = ?, price = ?, stock = ?, description = ?, brand = ?, img = ? WHERE id = ? AND active = TRUE',
+      [name, price, stock, description, brand, img, id]
+    );
+
+    if (result.affectedRows === 0) {
+      res.status(404).json({ message: 'Product not found or inactive' });
+      return;
+    }
+
+    res.json({ message: 'Product fully updated' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error updating product', error });
+  }
+};
+
 export const updateProductPrice = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
